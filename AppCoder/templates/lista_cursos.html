@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Cursos</title>
-</head>
-<body>
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
     <ul>
         {% for curso in lista_cursos %}
             <li>{{curso.nombre}} - {{curso.camada}}  </li>
         {% endfor %}
         
     </ul>
-</body>
-</html>
+
+{% endblock contenidoQueCambia %}
