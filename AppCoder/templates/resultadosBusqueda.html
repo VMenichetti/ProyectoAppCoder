@@ -2,7 +2,15 @@
 
 {% block contenidoQueCambia %}
         
-    <p>Resultados de la busqueda del curso</p>
-    {{curso}}
-
+<p>Resultados de la busqueda del curso</p>
+    
+    {% if cursos %}
+        <ul>
+            {% for curso in cursos  %}
+                <li>{{curso}}</li>                 
+            {% endfor %}
+            
+        </ul>
+    {% endif %}
+    
 {% endblock contenidoQueCambia %}

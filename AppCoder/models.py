@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -24,8 +25,12 @@ class Estudiante(models.Model):
 class Profesor(models.Model):
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
-    email = models.IntegerField()
+    email = models.EmailField()
     profesion = models.CharField(max_length=50)
+    cursos = models.ManyToManyField(Curso, blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.nombre} {self.apellido}'
 
 class Entregable(models.Model):
     nombre = models.CharField(max_length=40)
